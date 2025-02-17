@@ -1,0 +1,4 @@
+[ libguiLib.so ]
+# List of selected classes
+class TGMainFrameExample
+header TGMainFrameExample.hh

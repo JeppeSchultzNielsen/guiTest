@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeppe/devel/projects/guiTest/LinkDef.h
+
+/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh
+TApplication.h
+-
+TGClient.h
+-
+TGFrame.h
+-
+TGButton.h
+-
+TCanvas.h
+-
+iostream
+-
+
