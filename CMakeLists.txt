@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 # Find ROOT package
 find_package(AUSALIB REQUIRED)
 
+include(FetchContent)
+FetchContent_Declare(cmake_common GIT_REPOSITORY https://gitlab.au.dk/ausa/cmake_common.git)
+FetchContent_MakeAvailable(cmake_common)
+
 add_library(guiLib SHARED TGMainFrameExample.cpp TGMainFrameExample.hh)
 target_link_libraries(guiLib PUBLIC ROOT::Core ROOT::Gui)
 target_include_directories(guiLib PUBLIC ${CMAKE_SOURCE_DIR})
