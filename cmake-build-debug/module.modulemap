@@ -1,7 +1,0 @@
-module "guiLib" {
-  requires cplusplus
-  module "include/TGMainFrameExample.hh" { header "include/TGMainFrameExample.hh" export * }
-  link "libguiLib.so"
-  export *
-}
-
