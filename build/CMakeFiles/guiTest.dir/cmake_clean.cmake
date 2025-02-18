@@ -5,11 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/guiTest.dir/TGMainFrameExample.cpp.o.d"
   "CMakeFiles/guiTest.dir/main.cpp.o"
   "CMakeFiles/guiTest.dir/main.cpp.o.d"
-  "G__Dict.cxx"
   "guiTest"
   "guiTest.pdb"
-  "libguiLib.rootmap"
-  "libguiLib_rdict.pcm"
 )
 
 # Per-language clean rules from dependency scanning.

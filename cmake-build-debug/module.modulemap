@@ -1,6 +1,6 @@
 module "guiLib" {
   requires cplusplus
-  module "/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh" { header "/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh" export * }
+  module "include/TGMainFrameExample.hh" { header "include/TGMainFrameExample.hh" export * }
   link "libguiLib.so"
   export *
 }

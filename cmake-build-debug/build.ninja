@@ -49,13 +49,13 @@ cmake_ninja_workdir = /home/jeppe/devel/projects/guiTest/cmake-build-debug/
 
 build cmake_object_order_depends_target_guiLib: phony || cmake_object_order_depends_target_G__Dict
 
-build CMakeFiles/guiLib.dir/TGMainFrameExample.cpp.o: CXX_COMPILER__guiLib_unscanned_Debug /home/jeppe/devel/projects/guiTest/TGMainFrameExample.cpp || cmake_object_order_depends_target_guiLib
-  DEFINES = -DguiLib_EXPORTS
-  DEP_FILE = CMakeFiles/guiLib.dir/TGMainFrameExample.cpp.o.d
-  FLAGS = -g -std=gnu++17 -fPIC -fdiagnostics-color=always
-  INCLUDES = -I/home/jeppe/devel/projects/guiTest
+build CMakeFiles/guiLib.dir/source/TGMainFrameExample.cpp.o: CXX_COMPILER__guiLib_unscanned_Debug /home/jeppe/devel/projects/guiTest/source/TGMainFrameExample.cpp || cmake_object_order_depends_target_guiLib
+  DEFINES = -DAUSA_HAS_CURL -DAUSA_HAS_LIBCURL -DFMT_SHARED -DHAVE_GSL -DguiLib_EXPORTS
+  DEP_FILE = CMakeFiles/guiLib.dir/source/TGMainFrameExample.cpp.o.d
+  FLAGS = -g -fPIC -fdiagnostics-color=always
+  INCLUDES = -I/home/jeppe/devel/projects/guiTest/include
   OBJECT_DIR = CMakeFiles/guiLib.dir
-  OBJECT_FILE_DIR = CMakeFiles/guiLib.dir
+  OBJECT_FILE_DIR = CMakeFiles/guiLib.dir/source
 
 
 # =============================================================================
@@ -63,17 +63,17 @@ build CMakeFiles/guiLib.dir/TGMainFrameExample.cpp.o: CXX_COMPILER__guiLib_unsca
 
 
 #############################################
-# Link the shared library libguiLib.so
+# Link the shared library lib/libguiLib.so
 
-build libguiLib.so: CXX_SHARED_LIBRARY_LINKER__guiLib_Debug CMakeFiles/G__Dict.dir/G__Dict.cxx.o CMakeFiles/guiLib.dir/TGMainFrameExample.cpp.o | /usr/local/lib/libGui.so /usr/local/lib/libGpad.so /usr/local/lib/libGraf.so /usr/local/lib/libHist.so /usr/local/lib/libMatrix.so /usr/local/lib/libMathCore.so /usr/local/lib/libImt.so /usr/local/lib/libMultiProc.so /usr/local/lib/libNet.so /usr/local/lib/libRIO.so /usr/local/lib/libThread.so /usr/local/lib/libCore.so || G__Dict
+build lib/libguiLib.so: CXX_SHARED_LIBRARY_LINKER__guiLib_Debug CMakeFiles/G__Dict.dir/G__Dict.cxx.o CMakeFiles/guiLib.dir/source/TGMainFrameExample.cpp.o | /usr/local/lib/libAUSA.so.17.1 /usr/local/lib/libGui.so /usr/local/lib/libPhysics.so /usr/local/lib/libGenVector.so /usr/local/lib/libTreePlayer.so /usr/local/lib/libGraf3d.so /usr/local/lib/libTree.so /usr/local/lib/libMathMore.so /usr/local/lib/libSpectrum.so /usr/local/lib/libCling.so /usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0 /usr/local/lib/libgsl.so /usr/local/lib/libgslcblas.so /usr/lib/x86_64-linux-gnu/libcurl.so /usr/local/lib/libGpad.so /usr/local/lib/libGraf.so /usr/local/lib/libHist.so /usr/local/lib/libMatrix.so /usr/local/lib/libMathCore.so /usr/local/lib/libImt.so /usr/local/lib/libMultiProc.so /usr/local/lib/libNet.so /usr/local/lib/libRIO.so /usr/local/lib/libThread.so /usr/local/lib/libCore.so || G__Dict
   LANGUAGE_COMPILE_FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libGui.so  /usr/local/lib/libGpad.so  /usr/local/lib/libGraf.so  /usr/local/lib/libHist.so  /usr/local/lib/libMatrix.so  /usr/local/lib/libMathCore.so  /usr/local/lib/libImt.so  /usr/local/lib/libMultiProc.so  /usr/local/lib/libNet.so  /usr/local/lib/libRIO.so  /usr/local/lib/libThread.so  /usr/local/lib/libCore.so
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libAUSA.so.17.1  /usr/local/lib/libGui.so  /usr/local/lib/libPhysics.so  /usr/local/lib/libGenVector.so  /usr/local/lib/libTreePlayer.so  /usr/local/lib/libGraf3d.so  /usr/local/lib/libTree.so  /usr/local/lib/libMathMore.so  /usr/local/lib/libSpectrum.so  /usr/local/lib/libCling.so  -Wl,--unresolved-symbols=ignore-in-object-files  /usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0  /usr/local/lib/libgsl.so  /usr/local/lib/libgslcblas.so  /usr/lib/x86_64-linux-gnu/libcurl.so  /usr/local/lib/libGpad.so  /usr/local/lib/libGraf.so  /usr/local/lib/libHist.so  /usr/local/lib/libMatrix.so  /usr/local/lib/libMathCore.so  /usr/local/lib/libImt.so  /usr/local/lib/libMultiProc.so  /usr/local/lib/libNet.so  /usr/local/lib/libRIO.so  /usr/local/lib/libThread.so  /usr/local/lib/libCore.so
   OBJECT_DIR = CMakeFiles/guiLib.dir
   POST_BUILD = :
   PRE_LINK = :
   SONAME = libguiLib.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = libguiLib.so
+  TARGET_FILE = lib/libguiLib.so
   TARGET_PDB = guiLib.so.dbg
 
 # =============================================================================
@@ -83,12 +83,13 @@ build libguiLib.so: CXX_SHARED_LIBRARY_LINKER__guiLib_Debug CMakeFiles/G__Dict.d
 #############################################
 # Order-only phony target for G__Dict
 
-build cmake_object_order_depends_target_G__Dict: phony || G__Dict.cxx libguiLib.rootmap libguiLib_rdict.pcm
+build cmake_object_order_depends_target_G__Dict: phony || G__Dict.cxx lib/libguiLib.rootmap lib/libguiLib_rdict.pcm
 
 build CMakeFiles/G__Dict.dir/G__Dict.cxx.o: CXX_COMPILER__G__Dict_unscanned_Debug /home/jeppe/devel/projects/guiTest/cmake-build-debug/G__Dict.cxx || cmake_object_order_depends_target_G__Dict
+  DEFINES = -DAUSA_HAS_CURL -DAUSA_HAS_LIBCURL -DFMT_SHARED -DHAVE_GSL
   DEP_FILE = CMakeFiles/G__Dict.dir/G__Dict.cxx.o.d
-  FLAGS = -g -std=gnu++17 -fPIC -fdiagnostics-color=always
-  INCLUDES = -I/home/jeppe/devel/projects/guiTest
+  FLAGS = -g -fPIC -fdiagnostics-color=always
+  INCLUDES = -I/home/jeppe/devel/projects/guiTest -I/home/jeppe/devel/projects/guiTest/include
   OBJECT_DIR = CMakeFiles/G__Dict.dir
   OBJECT_FILE_DIR = CMakeFiles/G__Dict.dir
 
@@ -106,25 +107,23 @@ build G__Dict: phony CMakeFiles/G__Dict.dir/G__Dict.cxx.o
 #############################################
 # Order-only phony target for guiTest
 
-build cmake_object_order_depends_target_guiTest: phony || G__Dict.cxx libguiLib.rootmap libguiLib_rdict.pcm
+build cmake_object_order_depends_target_guiTest: phony || cmake_object_order_depends_target_guiLib
 
 build CMakeFiles/guiTest.dir/main.cpp.o: CXX_COMPILER__guiTest_unscanned_Debug /home/jeppe/devel/projects/guiTest/main.cpp || cmake_object_order_depends_target_guiTest
+  DEFINES = -DAUSA_HAS_CURL -DAUSA_HAS_LIBCURL -DFMT_SHARED -DHAVE_GSL
   DEP_FILE = CMakeFiles/guiTest.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/home/jeppe/devel/projects/guiTest/include
   OBJECT_DIR = CMakeFiles/guiTest.dir
   OBJECT_FILE_DIR = CMakeFiles/guiTest.dir
 
-build CMakeFiles/guiTest.dir/G__Dict.cxx.o: CXX_COMPILER__guiTest_unscanned_Debug /home/jeppe/devel/projects/guiTest/cmake-build-debug/G__Dict.cxx || cmake_object_order_depends_target_guiTest
-  DEP_FILE = CMakeFiles/guiTest.dir/G__Dict.cxx.o.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+build CMakeFiles/guiTest.dir/source/TGMainFrameExample.cpp.o: CXX_COMPILER__guiTest_unscanned_Debug /home/jeppe/devel/projects/guiTest/source/TGMainFrameExample.cpp || cmake_object_order_depends_target_guiTest
+  DEFINES = -DAUSA_HAS_CURL -DAUSA_HAS_LIBCURL -DFMT_SHARED -DHAVE_GSL
+  DEP_FILE = CMakeFiles/guiTest.dir/source/TGMainFrameExample.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/home/jeppe/devel/projects/guiTest/include
   OBJECT_DIR = CMakeFiles/guiTest.dir
-  OBJECT_FILE_DIR = CMakeFiles/guiTest.dir
-
-build CMakeFiles/guiTest.dir/TGMainFrameExample.cpp.o: CXX_COMPILER__guiTest_unscanned_Debug /home/jeppe/devel/projects/guiTest/TGMainFrameExample.cpp || cmake_object_order_depends_target_guiTest
-  DEP_FILE = CMakeFiles/guiTest.dir/TGMainFrameExample.cpp.o.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/guiTest.dir
-  OBJECT_FILE_DIR = CMakeFiles/guiTest.dir
+  OBJECT_FILE_DIR = CMakeFiles/guiTest.dir/source
 
 
 # =============================================================================
@@ -132,16 +131,40 @@ build CMakeFiles/guiTest.dir/TGMainFrameExample.cpp.o: CXX_COMPILER__guiTest_uns
 
 
 #############################################
-# Link the executable guiTest
+# Link the executable bin/guiTest
 
-build guiTest: CXX_EXECUTABLE_LINKER__guiTest_Debug CMakeFiles/guiTest.dir/main.cpp.o CMakeFiles/guiTest.dir/G__Dict.cxx.o CMakeFiles/guiTest.dir/TGMainFrameExample.cpp.o | /usr/local/lib/libGui.so /usr/local/lib/libGpad.so /usr/local/lib/libGraf.so /usr/local/lib/libHist.so /usr/local/lib/libMatrix.so /usr/local/lib/libMathCore.so /usr/local/lib/libImt.so /usr/local/lib/libMultiProc.so /usr/local/lib/libNet.so /usr/local/lib/libRIO.so /usr/local/lib/libThread.so /usr/local/lib/libCore.so
+build bin/guiTest: CXX_EXECUTABLE_LINKER__guiTest_Debug CMakeFiles/guiTest.dir/main.cpp.o CMakeFiles/guiTest.dir/source/TGMainFrameExample.cpp.o | lib/libguiLib.so /usr/local/lib/libAUSA.so.17.1 /usr/local/lib/libPhysics.so /usr/local/lib/libGenVector.so /usr/local/lib/libTreePlayer.so /usr/local/lib/libGraf3d.so /usr/local/lib/libTree.so /usr/local/lib/libMathMore.so /usr/local/lib/libSpectrum.so /usr/local/lib/libCling.so /usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0 /usr/local/lib/libgsl.so /usr/local/lib/libgslcblas.so /usr/lib/x86_64-linux-gnu/libcurl.so /usr/local/lib/libGui.so /usr/local/lib/libGpad.so /usr/local/lib/libGraf.so /usr/local/lib/libHist.so /usr/local/lib/libMatrix.so /usr/local/lib/libMathCore.so /usr/local/lib/libImt.so /usr/local/lib/libMultiProc.so /usr/local/lib/libNet.so /usr/local/lib/libRIO.so /usr/local/lib/libThread.so /usr/local/lib/libCore.so || lib/libguiLib.so
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib:  /usr/local/lib/libGui.so  /usr/local/lib/libGpad.so  /usr/local/lib/libGraf.so  /usr/local/lib/libHist.so  /usr/local/lib/libMatrix.so  /usr/local/lib/libMathCore.so  /usr/local/lib/libImt.so  /usr/local/lib/libMultiProc.so  /usr/local/lib/libNet.so  /usr/local/lib/libRIO.so  /usr/local/lib/libThread.so  /usr/local/lib/libCore.so
+  LINK_LIBRARIES = -Wl,-rpath,"\$$ORIGIN/../lib:/usr/local/lib:"  lib/libguiLib.so  /usr/local/lib/libAUSA.so.17.1  /usr/local/lib/libPhysics.so  /usr/local/lib/libGenVector.so  /usr/local/lib/libTreePlayer.so  /usr/local/lib/libGraf3d.so  /usr/local/lib/libTree.so  /usr/local/lib/libMathMore.so  /usr/local/lib/libSpectrum.so  /usr/local/lib/libCling.so  -Wl,--unresolved-symbols=ignore-in-object-files  /usr/lib/x86_64-linux-gnu/libfmt.so.9.1.0  /usr/local/lib/libgsl.so  /usr/local/lib/libgslcblas.so  /usr/lib/x86_64-linux-gnu/libcurl.so  /usr/local/lib/libGui.so  /usr/local/lib/libGpad.so  /usr/local/lib/libGraf.so  /usr/local/lib/libHist.so  /usr/local/lib/libMatrix.so  /usr/local/lib/libMathCore.so  /usr/local/lib/libImt.so  /usr/local/lib/libMultiProc.so  /usr/local/lib/libNet.so  /usr/local/lib/libRIO.so  /usr/local/lib/libThread.so  /usr/local/lib/libCore.so
   OBJECT_DIR = CMakeFiles/guiTest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = guiTest
+  TARGET_FILE = bin/guiTest
   TARGET_PDB = guiTest.dbg
+
+
+#############################################
+# Utility command for package
+
+build CMakeFiles/package.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug && /snap/clion/310/bin/cmake/linux/x64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build package: phony CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug && /snap/clion/310/bin/cmake/linux/x64/bin/cpack --config ./CPackSourceConfig.cmake /home/jeppe/devel/projects/guiTest/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build package_source: phony CMakeFiles/package_source.util
 
 
 #############################################
@@ -212,15 +235,128 @@ build install/strip: phony CMakeFiles/install/strip.util
 #############################################
 # Custom command for G__Dict.cxx
 
-build G__Dict.cxx libguiLib_rdict.pcm libguiLib.rootmap | ${cmake_ninja_workdir}G__Dict.cxx ${cmake_ninja_workdir}libguiLib_rdict.pcm ${cmake_ninja_workdir}libguiLib.rootmap: CUSTOM_COMMAND /home/jeppe/devel/projects/guiTest/LinkDef.h /home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh /home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh /home/jeppe/devel/projects/guiTest/LinkDef.h
-  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -E env LD_LIBRARY_PATH=/usr/local/lib: /usr/local/bin/rootcling -v2 -f G__Dict.cxx -s /home/jeppe/devel/projects/guiTest/cmake-build-debug/libguiLib.so -rml libguiLib.so -rmf /home/jeppe/devel/projects/guiTest/cmake-build-debug/libguiLib.rootmap -compilerI/usr/include/c++/13 -compilerI/usr/include/x86_64-linux-gnu/c++/13 -compilerI/usr/include/c++/13/backward -compilerI/usr/lib/gcc/x86_64-linux-gnu/13/include -compilerI/usr/local/include -compilerI/usr/include/x86_64-linux-gnu -compilerI/usr/include -compilerI/usr/lib/gcc/x86_64-linux-gnu/13/include -compilerI/usr/local/include -compilerI/usr/include/x86_64-linux-gnu -compilerI/usr/include -I/home/jeppe/devel/projects/guiTest -I/home/jeppe/devel/projects/guiTest -I/usr/local/include /home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh /home/jeppe/devel/projects/guiTest/LinkDef.h
-  DESC = Generating G__Dict.cxx, libguiLib_rdict.pcm, libguiLib.rootmap
+build G__Dict.cxx lib/libguiLib_rdict.pcm lib/libguiLib.rootmap | ${cmake_ninja_workdir}G__Dict.cxx ${cmake_ninja_workdir}lib/libguiLib_rdict.pcm ${cmake_ninja_workdir}lib/libguiLib.rootmap: CUSTOM_COMMAND /home/jeppe/devel/projects/guiTest/include/LinkDef.h /home/jeppe/devel/projects/guiTest/include/TGMainFrameExample.hh /home/jeppe/devel/projects/guiTest/include/TGMainFrameExample.hh /home/jeppe/devel/projects/guiTest/include/LinkDef.h
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -E env LD_LIBRARY_PATH=/usr/local/lib: /usr/local/bin/rootcling -v2 -f G__Dict.cxx -s /home/jeppe/devel/projects/guiTest/cmake-build-debug/lib/libguiLib.so -rml libguiLib.so -rmf /home/jeppe/devel/projects/guiTest/cmake-build-debug/lib/libguiLib.rootmap -DHAVE_GSL -DAUSA_HAS_LIBCURL -DAUSA_HAS_CURL -DFMT_SHARED -compilerI/usr/include/c++/13 -compilerI/usr/include/x86_64-linux-gnu/c++/13 -compilerI/usr/include/c++/13/backward -compilerI/usr/lib/gcc/x86_64-linux-gnu/13/include -compilerI/usr/local/include -compilerI/usr/include/x86_64-linux-gnu -compilerI/usr/include -compilerI/usr/lib/gcc/x86_64-linux-gnu/13/include -compilerI/usr/local/include -compilerI/usr/include/x86_64-linux-gnu -compilerI/usr/include -I/home/jeppe/devel/projects/guiTest -I/home/jeppe/devel/projects/guiTest/include -I/home/jeppe/devel/projects/guiTest/include -I/usr/local/include -I/usr/include -I/usr/include/x86_64-linux-gnu include/TGMainFrameExample.hh /home/jeppe/devel/projects/guiTest/include/LinkDef.h
+  DESC = Generating G__Dict.cxx, lib/libguiLib_rdict.pcm, lib/libguiLib.rootmap
   restat = 1
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/jeppe/devel/projects/guiTest/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for uninstall
+
+build _deps/cmake_common-build/uninstall: phony _deps/cmake_common-build/CMakeFiles/uninstall
+
+
+#############################################
+# Utility command for package
+
+build _deps/cmake_common-build/CMakeFiles/package.util: CUSTOM_COMMAND _deps/cmake_common-build/all
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug && /snap/clion/310/bin/cmake/linux/x64/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/cmake_common-build/package: phony _deps/cmake_common-build/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/cmake_common-build/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug && /snap/clion/310/bin/cmake/linux/x64/bin/cpack --config ./CPackSourceConfig.cmake /home/jeppe/devel/projects/guiTest/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/cmake_common-build/package_source: phony _deps/cmake_common-build/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/cmake_common-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/cmake_common-build/edit_cache: phony _deps/cmake_common-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/cmake_common-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build && /snap/clion/310/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/jeppe/devel/projects/guiTest -B/home/jeppe/devel/projects/guiTest/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/cmake_common-build/rebuild_cache: phony _deps/cmake_common-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/cmake_common-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/cmake_common-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/cmake_common-build/all
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/cmake_common-build/install: phony _deps/cmake_common-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/cmake_common-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/cmake_common-build/all
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/cmake_common-build/install/local: phony _deps/cmake_common-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/cmake_common-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/cmake_common-build/all
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/cmake_common-build/install/strip: phony _deps/cmake_common-build/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for _deps/cmake_common-build/CMakeFiles/uninstall
+
+build _deps/cmake_common-build/CMakeFiles/uninstall | ${cmake_ninja_workdir}_deps/cmake_common-build/CMakeFiles/uninstall: CUSTOM_COMMAND
+  COMMAND = cd /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build && /snap/clion/310/bin/cmake/linux/x64/bin/cmake -P /home/jeppe/devel/projects/guiTest/cmake-build-debug/cmake_uninstall_target.cmake
 
 # =============================================================================
 # Target aliases.
 
-build guiLib: phony libguiLib.so
+build guiLib: phony lib/libguiLib.so
+
+build guiTest: phony bin/guiTest
+
+build libguiLib.so: phony lib/libguiLib.so
+
+build uninstall: phony _deps/cmake_common-build/uninstall
 
 # =============================================================================
 # Folder targets.
@@ -230,7 +366,14 @@ build guiLib: phony libguiLib.so
 #############################################
 # Folder: /home/jeppe/devel/projects/guiTest/cmake-build-debug
 
-build all: phony libguiLib.so G__Dict guiTest
+build all: phony lib/libguiLib.so G__Dict bin/guiTest _deps/cmake_common-build/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/jeppe/devel/projects/guiTest/cmake-build-debug/_deps/cmake_common-build
+
+build _deps/cmake_common-build/all: phony
 
 # =============================================================================
 # Built-in targets
@@ -239,14 +382,14 @@ build all: phony libguiLib.so G__Dict guiTest
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/jeppe/devel/projects/guiTest/CMakeLists.txt /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindCURL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindGSL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPkgConfig.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets.cmake /usr/local/cmake/ROOTConfig-targets-release.cmake /usr/local/cmake/ROOTConfig-targets.cmake /usr/local/cmake/ROOTConfig-version.cmake /usr/local/cmake/ROOTConfig.cmake /usr/local/cmake/RootMacros.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfig.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfigVersion.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets-relwithdebinfo.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets.cmake /usr/share/cmake/RapidJSON/RapidJSONConfig.cmake /usr/share/cmake/RapidJSON/RapidJSONConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/jeppe/devel/projects/guiTest/CMakeLists.txt /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CPack.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CPackComponent.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/ExternalProject/shared_internal_commands.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FetchContent.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FetchContent/CMakeLists.cmake.in /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindCURL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindGSL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindGit.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPkgConfig.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/InstallRequiredSystemLibraries.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Templates/CPackConfig.cmake.in /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets.cmake /usr/local/cmake/ROOTConfig-targets-release.cmake /usr/local/cmake/ROOTConfig-targets.cmake /usr/local/cmake/ROOTConfig-version.cmake /usr/local/cmake/ROOTConfig.cmake /usr/local/cmake/RootMacros.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfig.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfigVersion.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets-relwithdebinfo.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets.cmake /usr/share/cmake/RapidJSON/RapidJSONConfig.cmake /usr/share/cmake/RapidJSON/RapidJSONConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake _deps/cmake_common-src/CMakeLists.txt _deps/cmake_common-src/cmake_custom_functions.cmake _deps/cmake_common-src/cmake_options.cmake _deps/cmake_common-src/cmake_uninstall_target.cmake _deps/cmake_common-src/cmake_uninstall_target.cmake.in _deps/cmake_common-src/configure_digest.cmake _deps/cmake_common-src/configure_digest.txt.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/jeppe/devel/projects/guiTest/CMakeLists.txt /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindCURL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindGSL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPkgConfig.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets.cmake /usr/local/cmake/ROOTConfig-targets-release.cmake /usr/local/cmake/ROOTConfig-targets.cmake /usr/local/cmake/ROOTConfig-version.cmake /usr/local/cmake/ROOTConfig.cmake /usr/local/cmake/RootMacros.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfig.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfigVersion.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets-relwithdebinfo.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets.cmake /usr/share/cmake/RapidJSON/RapidJSONConfig.cmake /usr/share/cmake/RapidJSON/RapidJSONConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
+build /home/jeppe/devel/projects/guiTest/CMakeLists.txt /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseArguments.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CPack.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/CPackComponent.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/ExternalProject/shared_internal_commands.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FetchContent.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FetchContent/CMakeLists.cmake.in /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindCURL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindGSL.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindGit.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPkgConfig.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/InstallRequiredSystemLibraries.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/UnixPaths.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake /snap/clion/310/bin/cmake/linux/x64/share/cmake-3.30/Templates/CPackConfig.cmake.in /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-config.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/fmt/fmt-targets.cmake /usr/local/cmake/ROOTConfig-targets-release.cmake /usr/local/cmake/ROOTConfig-targets.cmake /usr/local/cmake/ROOTConfig-version.cmake /usr/local/cmake/ROOTConfig.cmake /usr/local/cmake/RootMacros.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfig.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBConfigVersion.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets-relwithdebinfo.cmake /usr/local/lib/AUSALIB/cmake/AUSALIBTargets.cmake /usr/share/cmake/RapidJSON/RapidJSONConfig.cmake /usr/share/cmake/RapidJSON/RapidJSONConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfig.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake /usr/share/cmake/nlohmann_json/nlohmann_jsonTargets.cmake CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake _deps/cmake_common-src/CMakeLists.txt _deps/cmake_common-src/cmake_custom_functions.cmake _deps/cmake_common-src/cmake_options.cmake _deps/cmake_common-src/cmake_uninstall_target.cmake _deps/cmake_common-src/cmake_uninstall_target.cmake.in _deps/cmake_common-src/configure_digest.cmake _deps/cmake_common-src/configure_digest.txt.in: phony
 
 
 #############################################

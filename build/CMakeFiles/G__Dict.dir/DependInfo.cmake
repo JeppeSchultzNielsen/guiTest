@@ -13,6 +13,14 @@ set(CMAKE_DEPENDS_CHECK_CXX
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "AUSA_HAS_CURL"
+  "AUSA_HAS_LIBCURL"
+  "FMT_SHARED"
+  "HAVE_GSL"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/jeppe/devel/projects/guiTest"

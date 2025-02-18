@@ -35,7 +35,7 @@
 #include "TDataMember.h"
 
 // Header files passed as explicit arguments
-#include "/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh"
+#include "include/TGMainFrameExample.hh"
 
 // Header files passed via #pragma extra_include
 
@@ -136,13 +136,16 @@ namespace ROOT {
 namespace {
   void TriggerDictionaryInitialization_libguiLib_Impl() {
     static const char* headers[] = {
-"/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh",
+"include/TGMainFrameExample.hh",
 nullptr
     };
     static const char* includePaths[] = {
 "/home/jeppe/devel/projects/guiTest",
-"/home/jeppe/devel/projects/guiTest",
+"/home/jeppe/devel/projects/guiTest/include",
+"/home/jeppe/devel/projects/guiTest/include",
 "/usr/local/include",
+"/usr/include",
+"/usr/include/x86_64-linux-gnu",
 "/usr/local/include/",
 "/home/jeppe/devel/projects/guiTest/cmake-build-debug/",
 nullptr
@@ -153,15 +156,27 @@ nullptr
 #pragma clang diagnostic ignored "-Wignored-attributes"
 #pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
 extern int __Cling_AutoLoading_Map;
-class __attribute__((annotate("$clingAutoload$/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh")))  TGMainFrameExample;
+class __attribute__((annotate("$clingAutoload$include/TGMainFrameExample.hh")))  TGMainFrameExample;
 )DICTFWDDCLS";
     static const char* payloadCode = R"DICTPAYLOAD(
 #line 1 "libguiLib dictionary payload"
 
+#ifndef HAVE_GSL
+  #define HAVE_GSL 1
+#endif
+#ifndef AUSA_HAS_LIBCURL
+  #define AUSA_HAS_LIBCURL 1
+#endif
+#ifndef AUSA_HAS_CURL
+  #define AUSA_HAS_CURL 1
+#endif
+#ifndef FMT_SHARED
+  #define FMT_SHARED 1
+#endif
 
 #define _BACKWARD_BACKWARD_WARNING_H
 // Inline headers
-#include "/home/jeppe/devel/projects/guiTest/TGMainFrameExample.hh"
+#include "include/TGMainFrameExample.hh"
 
 #undef  _BACKWARD_BACKWARD_WARNING_H
 )DICTPAYLOAD";
