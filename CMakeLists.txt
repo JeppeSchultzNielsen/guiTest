@@ -17,7 +17,7 @@ root_generate_dictionary(G__Dict ${CMAKE_SOURCE_DIR}/TGMainFrameExample.hh MODUL
 
 
 add_executable(guiTest main.cpp TGMainFrameExample.hh G__Dict.cxx TGMainFrameExample.cpp)
-target_link_libraries(guiTest PUBLIC ROOT::Core ROOT::Gui ROOT::Graf AUSA::AUSA)
+target_link_libraries(guiTest PUBLIC AUSA::AUSA ROOT::Gui)
 
 install(TARGETS guiTest #CalibratorGUI
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT lib
